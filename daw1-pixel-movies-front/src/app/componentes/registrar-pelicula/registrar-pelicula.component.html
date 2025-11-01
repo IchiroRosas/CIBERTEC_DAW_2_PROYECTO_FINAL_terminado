@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Registrar nueva Pelicula</h2>
+  
+    <form #peliculaForm="ngForm" (ngSubmit)="registrarPelicula()">
+      <div class="mb-3">
+        <label for="nombrepelicula" class="form-label">Nombre de la Pelicula</label>
+        <input type="text" id="nombrepelicula" class="form-control" required [(ngModel)]="nuevaPelicula.nombrepelicula" name="nombrepelicula">
+      </div>
+  
+      <div class="mb-3">
+        <label for="directorpelicula" class="form-label">Director de la Pelicula</label>
+        <input type="text" id="directorpelicula" class="form-control" required [(ngModel)]="nuevaPelicula.directorpelicula" name="directorpelicula">
+      </div>
+
+      <div class="mb-3">
+        <label for="generopelicula" class="form-label">Genero de la Pelicula</label>
+        <input type="text" id="generopelicula" class="form-control" required [(ngModel)]="nuevaPelicula.generopelicula" name="generopelicula">
+      </div>
+
+      <div class="mb-3">
+        <label for="duracionpelicula" class="form-label">Duracion de la Pelicula</label>
+        <input type="text" id="duracionpelicula" class="form-control" required [(ngModel)]="nuevaPelicula.duracionpelicula" name="duracionpelicula">
+      </div>
+
+      <div class="mb-3">
+        <label for="idiomapelicula" class="form-label">Idioma de la Pelicula</label>
+        <input type="text" id="idiomapelicula" class="form-control" required [(ngModel)]="nuevaPelicula.idiomapelicula" name="idiomapelicula">
+      </div>
+
+      <div class="mb-3">
+        <label for="clasificacionpelicula" class="form-label">Clasificacion de la Pelicula</label>
+        <input type="text" id="clasificacionpelicula" class="form-control" required [(ngModel)]="nuevaPelicula.clasificacionpelicula" name="clasificacionpelicula">
+      </div>
+  
+      <!-- Botón Guardar -->
+
+
+      <div class="d-flex gap-3 mt-4">
+        <button type="submit" class="btn btn-success" [disabled]="peliculaForm.invalid">
+          <i class="bi bi-save"></i> Registrar Pelicula
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="volverListado()">Volver al Listado</button>
+      </div>
+
+    </form>
+  </div>

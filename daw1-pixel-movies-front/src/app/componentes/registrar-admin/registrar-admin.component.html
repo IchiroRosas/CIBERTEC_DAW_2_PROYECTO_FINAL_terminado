@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2>Registrar nuevo administrador</h2>
+  
+    <form #newAdminForm="ngForm" (ngSubmit)="registrarAdmin()">    
+      <div class="mb-3">
+        <label for="nombreUsuarioReal" class="form-label">Nombre Real</label>
+        <input type="text" id="nombreUsuarioReal" class="form-control" [(ngModel)]="nuevoAdmin.nombreUsuarioReal" name="nombreUsuarioReal" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="nombreUsuario" class="form-label">Nombre de Usuario</label>
+        <input type="text" id="nombreUsuario" class="form-control" [(ngModel)]="nuevoAdmin.nombreUsuario" name="nombreUsuario" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="contrasenia" class="form-label">Contraseña</label>
+        <input type="password" id="contrasenia" class="form-control" [(ngModel)]="nuevoAdmin.contrasenia" name="contrasenia" required>
+      </div>
+  
+      <div class="d-flex gap-3 mt-4">
+        <button type="submit" class="btn btn-primary" [disabled]="newAdminForm.invalid">Registrar</button>
+        <button type="button" class="btn btn-secondary" (click)="volverAlogin()">Volver a Login</button>
+      </div>
+    </form>
+    
+  </div>
+  

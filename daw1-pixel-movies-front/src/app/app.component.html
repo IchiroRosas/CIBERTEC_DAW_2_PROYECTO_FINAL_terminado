@@ -1,0 +1,34 @@
+
+<nav *ngIf="!isLoginRoute() && !isRegisterRoute()" class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid navbar-container-custom">
+    <a class="navbar-brand" routerLink="/PrincipalComponent">
+      <img src="assets/imgs/logoFinalNegroFondNar.png" alt="PixelMovies Logo" height="60">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/PrincipalComponent">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listadoSalas">Salas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listadoPeliculas">Películas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listadoFunciones">Funciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listadoProductos">Productos</a>
+        </li>
+      </ul>
+      <div class="ms-auto">
+        <button class="btn btn-outline-danger" (click)="preguntaCerrarSesion()">Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<router-outlet />

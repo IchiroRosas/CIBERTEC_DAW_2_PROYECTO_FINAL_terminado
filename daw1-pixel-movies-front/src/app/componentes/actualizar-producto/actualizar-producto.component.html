@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Actualizar Producto</h2>
+  
+    <form #productoForm="ngForm" (ngSubmit)="actualizarProducto()">
+      <div class="mb-3">
+        <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+        <input type="text" id="nombreProducto" class="form-control" required [(ngModel)]="producto.nombreProducto" name="nombreProducto">
+      </div>
+  
+      <div class="mb-3">
+        <label for="precioProducto" class="form-label">Precio del Producto</label>
+        <input type="text" id="precioProducto" class="form-control" required [(ngModel)]="producto.precioProducto" name="precioProducto">
+      </div>
+
+      <div class="mb-3">
+        <label for="marcaProducto" class="form-label">Marca del Producto</label>
+        <input type="text" id="marcaProducto" class="form-control" required [(ngModel)]="producto.marcaProducto" name="marcaProducto">
+      </div>
+  
+      <!-- Botón Guardar -->
+
+
+      <div class="d-flex gap-3 mt-4">
+        <button type="submit" class="btn btn-success" [disabled]="productoForm.invalid">
+          <i class="bi bi-save"></i> Actualizar Producto
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="volverListado()">Volver al Listado</button>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,54 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Listado de Funciones</h2>
+
+    <div class="container">
+      <div class="row align-items-end mb-3">
+        <div class="col-md-4">
+          <label for="fechaFuncion" class="form-label">Filtrar por Fecha:</label>
+          <input type="date" id="fechaFuncion" class="form-control" [(ngModel)]="fechaSeleccionada" name="fechaFuncion">
+        </div>
+    
+        <div class="col-md-3">
+          <button class="btn btn-secondary w-100" (click)="filtrarFuncion()">
+            <i class="bi bi-filter-circle"></i> Filtrar
+          </button>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-danger w-100" (click)="limpiarFiltros()">
+            <i class="bi bi-plus-circle"></i> Limpiar Filtros
+          </button>
+        </div>
+    
+        <div class="col-md-3">
+          <button class="btn btn-primary w-100" (click)="irAregistrarFuncion()">
+            <i class="bi bi-plus-circle"></i> Agregar Función
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-9 mx-auto text-center">
+      <h3 class="text-center titulo">Funciones</h3>
+      <div class="contenedor d-flex justify-content-center align-items-center flex-column">
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4" *ngFor="let funcion of funciones">
+            <div class="card shadow-sm">
+              <img src="assets/imgs/funciones.webp" class="componenteImg" alt="Imagen de Función">
+              <div class="card-body">
+                <h5 class="card-title">Película: {{ funcion.objPelicula.nombrepelicula }}</h5>
+                <p class="card-text">Género: {{ funcion.objPelicula.generopelicula }}</p>
+                <p class="card-text">Sala: {{ funcion.objSala.codsala }}</p>
+                <p class="card-text">Capacidad: {{ funcion.objSala.capacidad }}</p>
+                <p class="card-text">Fecha: {{ funcion.fechaFuncion | date: 'yyyy-MM-dd' }}</p>
+  
+                <button class="btn btn-info me-2" (click)="irAactualizarFuncion(funcion.idFuncion)">Actualizar</button>
+                <button class="btn btn-danger" (click)="eliminarFuncion(funcion.idFuncion)">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

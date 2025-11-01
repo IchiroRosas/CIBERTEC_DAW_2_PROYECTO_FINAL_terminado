@@ -1,0 +1,121 @@
+#navbar {
+    background-color: #ffffff;
+    padding: 10px 20px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .navbar-toggler {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .navbar-toggler-icon {
+    display: inline-block;
+  }
+  
+  .navbar-collapse {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-collapse.show {
+    display: flex;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {}
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #007bff;
+  }
+  
+  .logout-button button {
+    background-color: transparent;
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .logout-button button:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-toggler {
+      display: block;
+    }
+  
+    .navbar-collapse {
+      flex-direction: column;
+      display: none;
+      width: 100%;
+    }
+  
+    .navbar-collapse.show {
+      display: flex;
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .logout-button {
+      margin-top: 10px;
+    }
+  }
+  
+  :host {
+    display: block;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-container-custom {
+    background-color: #0000000a; /* O cualquier color que prefieras */
+  }
+
+  .navbar-expand-lg {
+    padding: 0;
+  }
+  .navbar-brand{
+    padding: 20px;
+  }

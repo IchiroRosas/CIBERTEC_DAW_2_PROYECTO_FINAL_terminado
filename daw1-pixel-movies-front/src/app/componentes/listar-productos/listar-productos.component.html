@@ -1,0 +1,51 @@
+<div class="container mt-4">
+    <h2 class="mb-3">Listado de Productos</h2>
+  
+    <div class="container">
+      <div class="row align-items-end mb-3">
+        <div class="col-md-4">
+          <label for="precio" class="form-label">Filtrar Productos con precio mayor: </label>
+          <input type="number" class="form-control" id="precio" [(ngModel)]="precioSeleccionado" name="precio" placeholder="Ingrese Precio">
+        </div>  
+    
+        <div class="col-md-3">
+          <button class="btn btn-secondary w-100" (click)="filtrarProductos()">
+            <i class="bi bi-filter-circle"></i> Filtrar
+          </button>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-danger w-100" (click)="limpiarFiltros()">
+            <i class="bi bi-plus-circle"></i> Limpiar Filtros
+          </button>
+        </div>
+    
+        <div class="col-md-3">
+          <button class="btn btn-primary w-100" (click)="irAregistrarProducto()">
+            <i class="bi bi-plus-circle"></i> Agregar Producto
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-9 mx-auto text-center">
+      <h3 class="text-center titulo">Productos</h3>
+      <div class="contenedor d-flex justify-content-center align-items-center flex-column">
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4" *ngFor="let producto of productos">
+            <div class="card shadow-sm">
+              <img src="assets/imgs/productos.webp" class="componenteImg" alt="Imagen de Producto">
+              <div class="card-body">
+                <h5 class="card-title">{{ producto.nombreProducto }}</h5>
+                <p class="card-text">Precio: S/. {{ producto.precioProducto }}</p>
+                <p class="card-text">Marca: {{ producto.marcaProducto }}</p>
+  
+                <button class="btn btn-info me-2" (click)="irAactualizarProducto(producto.idProducto)">Actualizar</button>
+                <button class="btn btn-danger" (click)="eliminarProducto(producto.idProducto)">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

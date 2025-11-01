@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Actualizar Sala</h2>
+
+    <form #formSala="ngForm" (ngSubmit)="actualizarSala()">
+        <div class="mb-3">
+            <label for="codsala" class="form-label">Código de Sala</label>
+            <input type="text" id="codsala" class="form-control" required [(ngModel)]="sala.codsala" name="codsala">
+        </div>
+
+        <div class="mb-3">
+            <label for="capacidad" class="form-label">Capacidad</label>
+            <input type="number" id="capacidad" class="form-control" required min="1" [(ngModel)]="sala.capacidad"
+                name="capacidad">
+        </div>
+
+
+
+        <div class="d-flex gap-3 mt-4">
+            <button type="submit" class="btn btn-primary" [disabled]="formSala.invalid"> <i class="bi bi-pencil-square"></i> Actualizar Sala </button>
+        
+            <button type="button" class="btn btn-secondary" (click)="volverListado()">Volver al Listado</button>
+          </div>
+    </form>
+</div>
