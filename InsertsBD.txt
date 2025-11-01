@@ -1,0 +1,38 @@
+use pixelmoviesdawii;
+-- 5 Productos
+INSERT INTO tb_productos (NOMBRE_PRODUCTO, PRECIO_PRODUCTO, MARCA_PRODUCTO) VALUES 
+('Popcorn tamaño grande', 27.00, 'Orville Redenbacher'),
+('Gaseosa vaso grande', 6.50, 'Inka Cola'),
+('Café', 5.00, 'Dell'),
+('Hot Dog', 14.50, 'Oscar Mayer'),
+('Nachos con queso', 10.00, 'Tostitos');
+
+-- 5 Películas
+INSERT INTO tb_peliculas (NOMBREPELICULA, DIRECTORPELICULA, GENEROPELICULA, DURACIONPELICULA, IDIOMAPELICULA, CLASIFICACIONPELICULA) VALUES
+('Spider-Man: No Way Home', 'Jon Watts', 'Superhéroes', '02:28:00', 'Español', 'ATP'),
+('El Gran Escape', 'John Sturges', 'Aventura', '02:52:00', 'Español', 'ATP'),
+('El Padrino', 'Francis Ford Coppola', 'Drama', '02:55:00', 'Inglés', 'PG-13'),
+('La La Land', 'Damien Chazelle', 'Musical', '02:08:00', 'Español', 'ATP'),
+('Titanic', 'James Cameron', 'Drama', '03:15:00', 'Español', 'PG-13');
+
+
+INSERT INTO tb_salas (CODSALA, CAPACIDAD) VALUES
+('SALA001', 50),
+('SALA002', 150),
+('SALA003', 75),
+('SALA004', 140),
+('SALA005', 120);
+
+INSERT INTO tb_funciones (idsala, idpelicula, fecha_funcion) VALUES
+(5, 1, '2025-06-02'),
+(4, 2, '2025-07-08'),
+(2, 3, '2025-05-05'),
+(3, 4, '2025-07-10'),
+(1, 5, '2025-08-15');
+
+INSERT INTO tb_admin (contrasenia, nombre_usuario) VALUES
+('1234', 'admin'),
+('abcd', 'juan23'),
+('pass1', 'maria_l'),
+('qwerty', 'carlos98'),
+('adminpass', 'luciaM');
