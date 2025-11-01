@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.logo-inicio {
+  width: 30%;
+  height: 20vh;
+  object-fit: contain;
+  margin-top: 0;
+}
+
+.carousel {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.carousel img {
+  object-fit: cover;
+  height: 60vh;
+}

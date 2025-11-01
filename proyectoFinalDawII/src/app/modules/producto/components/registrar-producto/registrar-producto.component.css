@@ -1,0 +1,48 @@
+/* Título */
+h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+/* Botones */
+button {
+  border: none;
+  border-radius: 8px;
+  text-transform: none;
+  font-weight: 500;
+  padding: 8px 16px;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Mensajes de error */
+.text-danger {
+  margin-top: 4px;
+}

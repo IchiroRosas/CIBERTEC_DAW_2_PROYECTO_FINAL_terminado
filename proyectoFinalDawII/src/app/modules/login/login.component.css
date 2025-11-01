@@ -1,0 +1,156 @@
+/* ==========================
+   CONTENEDOR PRINCIPAL
+========================== */
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #f8f9fa; /* color sutil de fondo */
+}
+
+/* ==========================
+   FONDO ANIMADO
+========================== */
+.fondo-gif {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  overflow: hidden;
+  max-width: 500px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+
+.fondo-gif img {
+  object-fit: contain;
+  max-width: 500px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  opacity: 0.85; /* leve transparencia para no saturar el fondo */
+}
+
+/* ==========================
+   FORMULARIO LOGIN
+========================== */
+.login-form-container {
+  max-width: 400px;
+  width: 90%;
+  margin: 80px auto 40px auto;
+  z-index: 1;
+  position: relative;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: rgb(245, 100, 0);
+  text-align: center;
+  color: #ffffff;
+  padding: 15px 0;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+/* ==========================
+   CAMPOS DE FORMULARIO
+========================== */
+.form-group label {
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: rgb(245, 100, 0);
+  box-shadow: 0 0 0 0.15rem rgba(245, 100, 0, 0.25);
+}
+
+/* ==========================
+   VALIDACIONES REACTIVAS
+========================== */
+.text-danger {
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* ==========================
+   BOTÓN DE LOGIN
+========================== */
+.btn-primary {
+  background-color: rgb(245, 100, 0);
+  border-color: rgb(245, 100, 0);
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgb(220, 85, 0);
+  border-color: rgb(220, 85, 0);
+}
+
+/* ==========================
+   PIE DE PÁGINA
+========================== */
+.login-footer {
+  background-color: rgb(45, 43, 43);
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.login-footer img {
+  max-width: 220px;
+  height: auto;
+  filter: brightness(0.95);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .fondo-gif {
+    top: 20px;
+    max-width: 300px;
+  }
+
+  .login-form-container {
+    margin-top: 120px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
+

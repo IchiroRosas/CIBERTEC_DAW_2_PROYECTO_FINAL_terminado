@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <h2 class="mb-3 text-center">Listado de Productos</h2>
+
+  <form [formGroup]="filtroForm" class="row align-items-end mb-4 justify-content-center">
+    <div class="col-md-4">
+      <label for="precio" class="form-label">Filtrar productos con precio mayor a:</label>
+      <input type="number" class="form-control" id="precio" formControlName="precio" placeholder="Ingrese precio">
+    </div>
+
+    <div class="col-md-2">
+      <button type="button" class="btn btn-secondary w-100" (click)="filtrarProductos()">
+        <i class="bi bi-filter-circle"></i> Filtrar
+      </button>
+    </div>
+
+    <div class="col-md-2">
+      <button type="button" class="btn btn-danger w-100 btn-limpiar" (click)="limpiarFiltros()">
+        <i class="bi bi-x-circle"></i> Limpiar
+      </button>
+    </div>
+
+    <div class="col-md-3">
+      <button type="button" class="btn btn-primary w-100" (click)="irAregistrarProducto()">
+        <i class="bi bi-plus-circle"></i> Agregar Producto
+      </button>
+    </div>
+  </form>
+
+  <div class="col-12 text-center">
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let producto of productos">
+        <div class="card shadow-sm producto-card">
+          <img src="assets/imgs/productos.webp" class="producto-img" alt="Imagen de Producto">
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.nombreProducto }}</h5>
+            <p class="card-text">Precio: S/. {{ producto.precioProducto }}</p>
+            <p class="card-text">Marca: {{ producto.marcaProducto }}</p>
+
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-info" (click)="irAactualizarProducto(producto.idProducto)">
+                <i class="bi bi-pencil-square"></i> Actualizar
+              </button>
+              <button class="btn btn-danger" (click)="abrirDialogEliminar(producto.idProducto)">
+                <i class="bi bi-trash"></i> Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

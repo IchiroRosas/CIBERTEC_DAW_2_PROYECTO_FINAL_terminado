@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  font-family: 'Inter', sans-serif;
+}
+
+.titulo-dialogo {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.icono-alerta {
+  margin-right: 8px;
+  font-size: 22px;
+  color: #fbbc05; /* Amarillo alerta */
+}
+
+.contenido-dialogo p {
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+}
+
+.acciones-dialogo {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+button {
+  border: none !important;
+  border-radius: 8px;
+  text-transform: none;
+  font-weight: 500;
+  padding: 6px 16px;
+}
+
+.btn-cancelar {
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+.btn-cancelar:hover {
+  background-color: #e4e4e4;
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}

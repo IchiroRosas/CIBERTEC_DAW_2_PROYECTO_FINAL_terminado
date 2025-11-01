@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Registrar nueva sala</h2>
+
+  <form [formGroup]="salaForm" (ngSubmit)="registrarSala()">
+    <!-- Código de Sala -->
+    <div class="mb-3">
+      <label for="codsala" class="form-label">Código de Sala</label>
+      <input
+        type="text"
+        id="codsala"
+        class="form-control"
+        placeholder="Ej: SALA007"
+        formControlName="codsala"
+      />
+      <div *ngIf="salaForm.get('codsala')?.touched && salaForm.get('codsala')?.invalid" class="text-danger mt-1">
+        <small *ngIf="salaForm.get('codsala')?.errors?.['required']">El código es obligatorio.</small>
+      </div>
+    </div>
+
+    <!-- Capacidad -->
+    <div class="mb-3">
+      <label for="capacidad" class="form-label">Capacidad</label>
+      <input
+        type="number"
+        id="capacidad"
+        class="form-control"
+        placeholder="Ej: 30"
+        formControlName="capacidad"
+        min="1"
+      />
+      <div *ngIf="salaForm.get('capacidad')?.touched && salaForm.get('capacidad')?.invalid" class="text-danger mt-1">
+        <small *ngIf="salaForm.get('capacidad')?.errors?.['required']">La capacidad es obligatoria.</small>
+        <small *ngIf="salaForm.get('capacidad')?.errors?.['min']">Debe ser al menos 1.</small>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="d-flex gap-3 mt-4">
+      <button type="submit" class="btn btn-success" [disabled]="salaForm.invalid">
+        <i class="bi bi-save"></i> Registrar Sala
+      </button>
+
+      <button type="button" class="btn btn-secondary" (click)="volverListado()">
+        Volver al Listado
+      </button>
+    </div>
+  </form>
+</div>

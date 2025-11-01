@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: DAWII-ProyectoFinal	
+  config:
+    import: "optional:configserver:http://localhost:8888"

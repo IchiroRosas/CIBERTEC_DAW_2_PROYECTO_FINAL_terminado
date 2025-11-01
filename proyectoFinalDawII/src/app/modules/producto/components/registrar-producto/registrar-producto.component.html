@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Registrar nuevo Producto</h2>
+
+  <form [formGroup]="productoForm" (ngSubmit)="registrarProducto()">
+    <div class="mb-3">
+      <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+      <input
+        type="text"
+        id="nombreProducto"
+        class="form-control"
+        formControlName="nombreProducto"
+        placeholder="Ej. Teclado mecánico"
+      />
+      <div *ngIf="productoForm.get('nombreProducto')?.invalid && productoForm.get('nombreProducto')?.touched" class="text-danger small">
+        El nombre es obligatorio (mínimo 3 caracteres)
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="precioProducto" class="form-label">Precio del Producto</label>
+      <input
+        type="number"
+        id="precioProducto"
+        class="form-control"
+        formControlName="precioProducto"
+        placeholder="Ej. 150"
+      />
+      <div *ngIf="productoForm.get('precioProducto')?.invalid && productoForm.get('precioProducto')?.touched" class="text-danger small">
+        El precio debe ser mayor a 0
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="marcaProducto" class="form-label">Marca del Producto</label>
+      <input
+        type="text"
+        id="marcaProducto"
+        class="form-control"
+        formControlName="marcaProducto"
+        placeholder="Ej. Logitech"
+      />
+      <div *ngIf="productoForm.get('marcaProducto')?.invalid && productoForm.get('marcaProducto')?.touched" class="text-danger small">
+        La marca es obligatoria (mínimo 2 caracteres)
+      </div>
+    </div>
+
+    <div class="d-flex gap-3 mt-4 justify-content-center">
+      <button type="submit" class="btn btn-success" [disabled]="productoForm.invalid">
+        <i class="bi bi-save"></i> Registrar Producto
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="volverListado()">
+        Volver al Listado
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Actualizar Producto</h2>
+
+  <form [formGroup]="productoForm" (ngSubmit)="actualizarProducto()">
+    <div class="mb-3">
+      <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+      <input
+        type="text"
+        id="nombreProducto"
+        class="form-control"
+        formControlName="nombreProducto"
+        placeholder="Ingrese nombre del producto"
+      />
+      <small class="text-danger" *ngIf="productoForm.get('nombreProducto')?.invalid && productoForm.get('nombreProducto')?.touched">
+        El nombre es obligatorio y debe tener al menos 3 caracteres.
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label for="precioProducto" class="form-label">Precio del Producto</label>
+      <input
+        type="number"
+        id="precioProducto"
+        class="form-control"
+        formControlName="precioProducto"
+        placeholder="Ingrese precio"
+      />
+      <small class="text-danger" *ngIf="productoForm.get('precioProducto')?.invalid && productoForm.get('precioProducto')?.touched">
+        Ingrese un precio válido mayor que 0.
+      </small>
+    </div>
+
+    <div class="mb-3">
+      <label for="marcaProducto" class="form-label">Marca del Producto</label>
+      <input
+        type="text"
+        id="marcaProducto"
+        class="form-control"
+        formControlName="marcaProducto"
+        placeholder="Ingrese marca del producto"
+      />
+      <small class="text-danger" *ngIf="productoForm.get('marcaProducto')?.invalid && productoForm.get('marcaProducto')?.touched">
+        La marca es obligatoria y debe tener al menos 2 caracteres.
+      </small>
+    </div>
+
+    <div class="d-flex gap-3 mt-4 justify-content-center">
+      <button type="submit" class="btn btn-success" [disabled]="productoForm.invalid">
+        <i class="bi bi-save"></i> Actualizar Producto
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="volverListado()">
+        <i class="bi bi-arrow-left-circle"></i> Volver al Listado
+      </button>
+    </div>
+  </form>
+</div>

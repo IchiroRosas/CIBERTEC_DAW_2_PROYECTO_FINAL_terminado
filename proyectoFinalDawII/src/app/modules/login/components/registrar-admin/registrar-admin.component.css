@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgb(14, 50, 181);
+}

@@ -1,0 +1,60 @@
+<div class="fondo-gif">
+    <img ngSrc="/assets/imgs/login.gif" alt="Fondo animado de login" loading="eager">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="login-form-container">
+            <div *ngIf="loginError" class="alert alert-danger">Usuario o contraseña inválidos</div>
+            <div *ngIf="logoutSuccess" class="alert alert-success">Tu sesión fue finalizada con éxito</div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Iniciar Sesión</h2>
+                </div>
+                <div class="card-body">
+
+                    <!-- Formulario reactivo -->
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="form-group mb-3">
+                            <label class="control-label">Usuario</label>
+                            <input type="text" id="nombreUsuario" class="form-control" placeholder="Ingrese el usuario"
+                                formControlName="nombreUsuario" />
+                            <div *ngIf="nombreUsuario?.invalid && (nombreUsuario?.touched || nombreUsuario?.dirty)"
+                                class="text-danger">
+                                El usuario es obligatorio.
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="control-label">Password</label>
+                            <input type="password" id="contrasenia" class="form-control"
+                                placeholder="Ingrese el Password" formControlName="contrasenia" />
+                            <div *ngIf="contrasenia?.invalid && (contrasenia?.touched || contrasenia?.dirty)"
+                                class="text-danger">
+                                La contraseña es obligatoria.
+                            </div>
+                        </div>
+
+                        <div class="text-left mt-2">
+                            <button class="btn btn-link p-0" (click)="aRegistrarNuevoAdmin()" style="text-decoration: none;">Nuevo administrador</button>
+                        </div>
+
+                        <br><br><br>
+
+                        <div class="form-group mb-3 text-center">
+                            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+                                Iniciar Sesión
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="login-footer">
+    <img src="assets/imgs/logoFinalBlanco.png" alt="Logo Final">
+</div>

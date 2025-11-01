@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: DAWII-ConfigServer-PF
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MateoR8/ProyectoFinal-MySql-Connection.git
+          search-paths: '/'
+
+server:
+  port: 8888

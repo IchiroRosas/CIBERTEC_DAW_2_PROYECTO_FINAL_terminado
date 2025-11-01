@@ -1,0 +1,61 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  background: #f8f9fa;
+  padding: 2rem 1rem;
+}
+
+.titulo {
+  font-size: 2.5rem; /* 35pt -> adaptado a rem */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.pelicula-card {
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pelicula-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  background-color: #ffffff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.btn-info {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #2d89c8;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c32b3b;
+}
+
+/* BOTONES DE LA BARRA DE FILTROS */
+.btn-secondary.w-100, .btn-danger.w-100, .btn-primary.w-100 {
+  white-space: nowrap;
+}
