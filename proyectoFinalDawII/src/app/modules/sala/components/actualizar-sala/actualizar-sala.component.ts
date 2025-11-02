@@ -65,7 +65,6 @@ export class ActualizarSalaComponent {
     this.salaService.actualizarSala(salaActualizada).subscribe({
       next: response => {
         console.log('Sala actualizada:', response);
-        alert('Sala actualizada correctamente.');
         this.router.navigate(['/salas']);
       },
       error: err => {

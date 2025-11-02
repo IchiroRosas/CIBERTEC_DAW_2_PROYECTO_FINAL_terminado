@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './service/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -33,10 +34,13 @@ loginForm!: FormGroup;
 
     const credenciales = this.loginForm.value;
 
-    this.loginService.loginAdministrador(credenciales as any).subscribe({
+    this.loginService.loginAdministrador(credenciales).subscribe({
       next: (admin) => {
-        console.log('Login exitoso:', admin);
-        this.loginError = false;
+        Swal.fire({
+          title: '¡Bienvenido!',
+          text: `Hola, ${admin.nombreUsuario}. Has iniciado sesión con éxito.`,
+          icon: 'success'
+        });
         this.router.navigate(['/principal']);
       },
       error: () => {

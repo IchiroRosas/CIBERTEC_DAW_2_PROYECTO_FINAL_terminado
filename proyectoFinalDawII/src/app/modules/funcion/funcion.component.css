@@ -1,0 +1,231 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  width: auto;
+  background-color: #f8f9fa; /* mismo color de fondo */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* TÍTULO */
+.titulo {
+  font-size: 2.5rem; /* 35pt -> adaptado a rem */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+/* FILTROS - form row */
+.row.align-items-end.mb-3 {
+  gap: 0.5rem;
+}
+
+/* TARJETAS / LISTADO */
+.contenedor {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* IMAGEN DENTRO DE LA TARJETA */
+.componenteImg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* CARD BODY */
+.card-body {
+  padding: 1rem;
+  width: 100%;
+}
+
+/* TEXTOS DENTRO DE LA TARJETA */
+.card-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.card-text {
+  margin: 0.2rem 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* BOTONES */
+.btn-info {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #2d89c8;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c32b3b;
+}
+
+/* BOTONES DE LA BARRA DE FILTROS */
+.btn-secondary.w-100, .btn-danger.w-100, .btn-primary.w-100 {
+  white-space: nowrap;
+}
+
+/* NAV Y LOGO (si el componente incluye nav; si no, no afecta fuera debido a encapsulación) */
+nav {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+nav a {
+  padding-left: 30px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+nav .form-control {
+  flex: 2;
+  max-width: 500px;
+  margin: 0 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+}
+
+.imgLogo {
+  width: 20%;
+}
+
+/* NAV LIST */
+.nav-list {
+  background-color: rgb(255, 81, 0);
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list > ul > li {
+  border-top: 2px solid rgba(120, 51, 51, 0.831);
+}
+
+.nav-list > ul > li > a {
+  color: white;
+}
+
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 992px) {
+  .componenteImg {
+    max-width: 100%;
+    height: 160px;
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .componenteImg {
+    height: 140px;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+  }
+
+  .imgLogo {
+    width: 35%;
+  }
+
+  .row.align-items-end.mb-3 {
+    display: grid;
+    gap: 0.75rem;
+  }
+}
+
+/* UTILIDADES ADICIONALES */
+.d-flex.gap-3 {
+  gap: 0.75rem;
+}
+
+/* CONTENEDOR DE CARDS */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 1rem 0;
+}
+
+/* CADA ITEM (CARD) */
+.card-item {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: 1px solid rgba(0,0,0,0.06);
+  background-color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 992px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,1 +1,58 @@
-<p>actualizar-funcion works!</p>
+<div class="container mt-4">
+  <h2 class="mb-4">Actualizar función</h2>
+
+  <form [formGroup]="funcionForm" (ngSubmit)="actualizarFuncion()">
+    <!-- Fecha de Función -->
+    <div class="mb-3">
+      <label for="fechaFuncion" class="form-label">Fecha de Función</label>
+      <input
+        type="date"
+        id="fechaFuncion"
+        class="form-control"
+        formControlName="fechaFuncion"
+      />
+      <div *ngIf="funcionForm.get('fechaFuncion')?.touched && funcionForm.get('fechaFuncion')?.invalid" class="text-danger mt-1">
+        <small *ngIf="funcionForm.get('fechaFuncion')?.errors?.['required']">La fecha es obligatoria.</small>
+      </div>
+    </div>
+
+    <!-- Id de la Sala -->
+    <div class="mb-3">
+      <label for="idsala" class="form-label">ID Sala</label>
+      <select class="form-control" id="idsala" formControlName="idsala">
+                <option value=0 hidden selected disabled>Seleccione...</option>
+                <option *ngFor="let sala of salas" [value]="sala.idsala">
+                    {{ sala.codsala }} - Capacidad: {{ sala.capacidad }}
+                </option>
+            </select>
+      <div *ngIf="funcionForm.get('idsala')?.touched && funcionForm.get('idsala')?.invalid" class="text-danger mt-1">
+        <small *ngIf="funcionForm.get('idsala')?.errors?.['required']">La Sala es obligatoria.</small>
+      </div>
+    </div>
+
+    <!-- Id de la Peliculas -->
+    <div class="mb-3">
+      <label for="idpelicula" class="form-label">ID Película</label>
+      <select class="form-control" id="idpelicula" formControlName="idpelicula">
+                <option value=0 hidden selected disabled>Seleccione...</option>
+                <option *ngFor="let pelicula of peliculas" [value]="pelicula.idpelicula">
+                    {{ pelicula.nombrepelicula }}
+                </option>
+            </select>
+      <div *ngIf="funcionForm.get('idpelicula')?.touched && funcionForm.get('idpelicula')?.invalid" class="text-danger mt-1">
+        <small *ngIf="funcionForm.get('idpelicula')?.errors?.['required']">La Película es obligatoria.</small>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="d-flex gap-3 mt-4">
+      <button type="submit" class="btn btn-success" [disabled]="funcionForm.invalid">
+        <i class="bi bi-save"></i> Actualizar Función
+      </button>
+
+      <button type="button" class="btn btn-secondary" (click)="volverListado()">
+        Volver al Listado
+      </button>
+    </div>
+  </form>
+</div>

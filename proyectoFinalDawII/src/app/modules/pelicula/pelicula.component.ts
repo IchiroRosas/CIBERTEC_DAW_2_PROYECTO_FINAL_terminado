@@ -12,7 +12,7 @@ import { EliminarPeliculaComponent } from './components/eliminar-pelicula/elimin
   styleUrls: ['./pelicula.component.css']
 })
 export class PeliculaComponent {
-peliculas: Pelicula[] = [];
+  peliculas: Pelicula[] = [];
   idiomas: string[] = [];
   filtroForm!: FormGroup;
 
@@ -21,7 +21,7 @@ peliculas: Pelicula[] = [];
     private router: Router,
     private dialog: MatDialog,
     private fb: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // Inicializar formulario reactivo
@@ -41,11 +41,11 @@ peliculas: Pelicula[] = [];
   }
 
   irAregistrarPelicula(): void {
-    this.router.navigate(['/registroPelicula']);
+    this.router.navigate(['/peliculas/registrar']);
   }
 
   irActualizarPelicula(id: number): void {
-    this.router.navigate(['/actualizarPelicula', id]);
+    this.router.navigate(['/peliculas/actualizar', id]);
   }
 
   abrirDialogEliminar(id: number): void {

@@ -1,11 +1,10 @@
-<div class="peliculas-container">
-  <h2 class="titulo text-center mb-4">🎬 Listado de Películas</h2>
+<div class="container mt-4">
+  <h2 class="mb-3 text-center">Listado de películas</h2>
 
-  <!-- Filtros -->
   <form [formGroup]="filtroForm" class="row align-items-end mb-4 justify-content-center">
     <div class="col-md-4">
-      <label class="form-label fw-semibold">Filtrar por idioma:</label>
-      <select class="form-select rounded-pill" formControlName="idioma">
+      <label class="form-label">Filtrar por idioma:</label>
+      <select class="form-select" formControlName="idioma">
         <option value="0" selected disabled hidden>Seleccione...</option>
         <option *ngFor="let idioma of idiomas" [value]="idioma">{{ idioma }}</option>
       </select>

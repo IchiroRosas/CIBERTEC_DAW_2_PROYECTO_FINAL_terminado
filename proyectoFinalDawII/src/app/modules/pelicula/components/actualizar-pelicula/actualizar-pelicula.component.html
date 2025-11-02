@@ -1,1 +1,81 @@
-<p>actualizar-pelicula works!</p>
+<div class="container mt-4">
+    <h2 class="mb-4">Actualizar película</h2>
+
+    <form [formGroup]="peliculaForm" (ngSubmit)="actualizarPelicula()">
+        <div class="mb-3">
+            <label for="nombrepelicula" class="form-label">Nombre de la Pelicula</label>
+            <input type="text" id="nombrepelicula" class="form-control" formControlName="nombrepelicula"
+                placeholder="Ej: Mi película Fav">
+            <div *ngIf="peliculaForm.get('nombrepelicula')?.touched && peliculaForm.get('nombrepelicula')?.invalid"
+                class="text-danger mt-1">
+                <small *ngIf="peliculaForm.get('nombrepelicula')?.errors?.['required']">El nombre es
+                    obligatorio.</small>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="directorpelicula" class="form-label">Director de la Pelicula</label>
+            <input type="text" id="directorpelicula" class="form-control" formControlName="directorpelicula"
+                placeholder="Ej: Director Famoso">
+            <div *ngIf="peliculaForm.get('directorpelicula')?.touched && peliculaForm.get('directorpelicula')?.invalid"
+                class="text-danger mt-1">
+                <small *ngIf="peliculaForm.get('directorpelicula')?.errors?.['required']">El director es
+                    obligatorio.</small>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="generopelicula" class="form-label">Género de la Pelicula</label>
+            <input type="text" id="generopelicula" class="form-control" formControlName="generopelicula"
+                placeholder="Ej: Acción">
+            <div *ngIf="peliculaForm.get('generopelicula')?.touched && peliculaForm.get('generopelicula')?.invalid"
+                class="text-danger mt-1">
+                <small *ngIf="peliculaForm.get('generopelicula')?.errors?.['required']">El género es
+                    obligatorio.</small>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="duracionpelicula" class="form-label">Duracion de la Pelicula</label>
+            <input type="text" id="duracionpelicula" class="form-control" formControlName="duracionpelicula"
+                placeholder="Ej: 01:30:00">
+            <div *ngIf="peliculaForm.get('duracionpelicula')?.touched && peliculaForm.get('duracionpelicula')?.invalid"
+                class="text-danger mt-1">
+                <small *ngIf="peliculaForm.get('duracionpelicula')?.errors?.['required']">La duración es
+                    obligatoria.</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="idiomaPelicula" class="form-label">Idioma de la Pelicula</label>
+                <input type="text" id="idiomaPelicula" class="form-control" formControlName="idiomaPelicula"
+                    placeholder="Ej: Español">
+                <div *ngIf="peliculaForm.get('idiomaPelicula')?.touched && peliculaForm.get('idiomaPelicula')?.invalid"
+                    class="text-danger mt-1">
+                    <small *ngIf="peliculaForm.get('idiomaPelicula')?.errors?.['required']">El idioma es
+                        obligatorio.</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="clasificacionpelicula" class="form-label">Clasificacion de la Pelicula</label>
+                    <input type="text" id="clasificacionpelicula" class="form-control"
+                        formControlName="clasificacionpelicula" placeholder="Ej: PG-13">
+                    <div *ngIf="peliculaForm.get('clasificacionpelicula')?.touched && peliculaForm.get('clasificacionpelicula')?.invalid"
+                        class="text-danger mt-1">
+                        <small *ngIf="peliculaForm.get('clasificacionpelicula')?.errors?.['required']">La clasificación
+                            es obligatoria.</small>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-4">
+                        <button type="submit" class="btn btn-success" [disabled]="peliculaForm.invalid">
+                            <i class="bi bi-save"></i> Actualizar película
+                        </button>
+
+                        <button type="button" class="btn btn-secondary" (click)="volverListado()">
+                            Volver al Listado
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

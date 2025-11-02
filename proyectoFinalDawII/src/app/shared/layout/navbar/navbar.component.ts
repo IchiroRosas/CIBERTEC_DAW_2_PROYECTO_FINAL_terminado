@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -10,16 +11,6 @@ export class NavbarComponent {
 
   constructor(private router: Router) { }
 
-  goHome(event?: Event): void {
-    if (event) event.preventDefault();
-    this.router.navigate(['/principal']);
-  }
-
-  navigateTo(path: string, event?: Event): void {
-    if (event) event.preventDefault();
-    this.router.navigate([path]);
-  }
-
   isLoginRoute(): boolean {
     return this.router.url.includes('/login');
   }
@@ -29,10 +20,17 @@ export class NavbarComponent {
   }
 
   preguntaCerrarSesion(): void {
-    const confirmar = confirm('¿Seguro que deseas cerrar sesión?');
-    if (confirmar) {
-      localStorage.clear();
-      this.router.navigate(['/login']);
-    }
+    Swal.fire({
+      title: '¿Seguro que deseas cerrar sesión?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, cerrar sesión',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.clear();
+        this.router.navigate(['/login']);
+      }
+    });
   }
 }

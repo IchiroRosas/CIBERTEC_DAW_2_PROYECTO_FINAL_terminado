@@ -1,7 +1,7 @@
 :host {
   display: block;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  width: auto;
   background-color: #f8f9fa; /* mismo color de fondo */
   padding: 2rem;
   box-sizing: border-box;

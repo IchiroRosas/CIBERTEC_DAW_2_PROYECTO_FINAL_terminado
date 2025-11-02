@@ -64,7 +64,6 @@ productoForm!: FormGroup;
     this.productoService.actualizarProducto(productoActualizado).subscribe({
       next: response => {
         console.log('Producto actualizado:', response);
-        alert('Producto actualizado correctamente.');
         this.router.navigate(['/productos']);
       },
       error: err => {

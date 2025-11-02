@@ -1,0 +1,13 @@
+<h2 mat-dialog-title class="titulo-dialogo">
+  <i class="bi bi-exclamation-triangle-fill icono-alerta"></i>
+  Confirmar eliminación
+</h2>
+
+<mat-dialog-content class="contenido-dialogo">
+  <p>¿Estás seguro de que deseas eliminar esta sala?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="acciones-dialogo">
+  <button mat-button class="btn-cancelar" (click)="cancelar()">Cancelar</button>
+  <button mat-raised-button class="btn-eliminar" (click)="confirmar()">Eliminar</button>
+</mat-dialog-actions>

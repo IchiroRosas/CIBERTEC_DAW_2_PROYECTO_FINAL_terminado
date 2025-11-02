@@ -1,30 +1,29 @@
 :host {
   display: block;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  width: auto;
   background-color: #f8f9fa; /* mismo color de fondo */
   padding: 2rem;
   box-sizing: border-box;
 }
 
+/* TÍTULO */
 .titulo {
-  font-size: 1.8rem;
-  font-weight: normal; /* elimina la negrita */
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-
-
-/* CONTENEDOR PRINCIPAL */
-.container {
-  max-width: 1100px;
-}
-
-/* TÍTULO PRINCIPAL */
-h2 {
-  font-weight: 600;
-  color: #333;
+  font-size: 2.5rem; /* 35pt -> adaptado a rem */
+  font-weight: 700;
   margin-bottom: 1rem;
+  color: #222;
+}
+
+/* FILTROS - form row */
+.row.align-items-end.mb-3 {
+  gap: 0.5rem;
+}
+
+/* TARJETAS / LISTADO */
+.contenedor {
+  width: 100%;
+  padding-top: 10px;
 }
 
 /* TARJETAS DE PRODUCTO */
@@ -33,7 +32,7 @@ h2 {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  background-color: #fff; /* igual que salas */
+  background-color: #fff;
 }
 
 .producto-card:hover {
@@ -47,15 +46,6 @@ h2 {
   width: 100%;
   object-fit: cover;
   border-bottom: 1px solid #eee;
-}
-
-/* BOTONES */
-button {
-  border: none !important;
-  border-radius: 8px;
-  text-transform: none;
-  font-weight: 500;
-  padding: 6px 16px;
 }
 
 /* BOTÓN LIMPIAR ROJO */

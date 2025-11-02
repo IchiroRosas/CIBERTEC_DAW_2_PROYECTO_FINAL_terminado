@@ -1,5 +1,5 @@
-import { Pelicula } from "./pelicula";
-import { Sala } from "./sala";
+import { Pelicula } from "../../pelicula/dto/pelicula-dto";
+import { Sala } from "../../sala/dto/sala-dto";
 
 export interface Funcion {
     idFuncion: number;
@@ -12,8 +12,8 @@ export interface Funcion {
 
 export interface FuncionInserto{
     fechaFuncion: Date;
-      idsala: number;
-      idpelicula: number;
+    idsala: number;
+    idpelicula: number;
 }
 
 export interface FuncionUpdate{

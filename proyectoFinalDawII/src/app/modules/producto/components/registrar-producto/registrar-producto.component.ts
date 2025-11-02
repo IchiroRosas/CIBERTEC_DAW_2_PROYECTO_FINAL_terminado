@@ -35,7 +35,6 @@ export class RegistrarProductoComponent {
     this.productoService.registrarProducto(nuevoProducto).subscribe({
       next: (response) => {
         console.log('Producto registrado con éxito:', response);
-        alert('✅ Producto registrado correctamente');
         this.productoForm.reset({ nombreProducto: '', precioProducto: 0, marcaProducto: '' });
         this.router.navigate(['/productos']);
       },
